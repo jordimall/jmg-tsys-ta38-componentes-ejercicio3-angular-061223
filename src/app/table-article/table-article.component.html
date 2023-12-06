@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Borrar</th>
+      <th>Seleccionar</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (article of listArticles; track $index) {
+    <tr>
+      <td>{{ article.getCode() }}</td>
+      <td>{{ article.getDescription() }}</td>
+      <td>{{ article.getPrice() }}</td>
+      <td><button (click)="eliminarArticulo($index)">Borrar</button></td>
+      <td><button (click)="modificarArticulo($index)">Selecionar</button></td>
+    </tr>
+    }
+  </tbody>
+</table>
